@@ -1,110 +1,163 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaino Exchange - Sito in Costruzione</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a40 100%);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .emoji {
-            font-size: 64px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #ffb703;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .loader {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: #ffb703;
-            border-radius: 50%;
-            animation: pulse 1.4s infinite ease-in-out both;
-        }
-
-        .dot:nth-child(2) { animation-delay: 0.2s; }
-        .dot:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes pulse {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
-        }
-
-        .footer {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <!-- Rende il sito adattabile a mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NomeSito - Home</title>
+  <!-- Collegamento al foglio di stile -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="emoji">🚧</div>
-        <h1>Sito in Costruzione</h1>
-        <p>Stiamo lavorando duramente per portare online il nuovo progetto <strong>ZainoExchange</strong>. Torna a trovarci presto per scoprire tutte le novità!</p>
-        
-        <div class="loader">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
+  <!-- ===== HEADER LIVELLO 1: logo, consegna, ricerca, account, ordini, carrello ===== -->
+  <header class="header">
+    <div class="header__top contenitore">
+      <!-- Logo segnaposto: sostituire con il logo del sito (identita' propria) -->
+      <a href="#" class="logo">Nome<span>Sito</span></a>
 
-        <div class="footer">
-            &copy; 2026 Zaino Exchange. Tutti i diritti riservati.
-        </div>
+      <!-- Scelta del luogo di consegna -->
+      <a href="#" class="consegna">
+        <small>Consegna a</small>
+        <strong>Inserisci CAP</strong>
+      </a>
+
+      <!-- Barra di ricerca con menu categorie -->
+      <form class="ricerca" action="#" role="search">
+        <select aria-label="Categoria">
+          <option>Tutte</option>
+          <option>Categoria 1</option>
+          <option>Categoria 2</option>
+        </select>
+        <input type="search" placeholder="Cerca prodotti" aria-label="Cerca">
+        <button type="submit">Cerca</button>
+      </form>
+
+      <!-- Account, ordini e carrello con contatore -->
+      <a href="#" class="voce-header"><small>Ciao, accedi</small><strong>Account e liste</strong></a>
+      <a href="#" class="voce-header"><small>Resi e</small><strong>Ordini</strong></a>
+      <a href="#" class="carrello" aria-label="Carrello">
+        <span class="carrello__contatore">0</span>
+        <strong>Carrello</strong>
+      </a>
     </div>
+
+    <!-- ===== HEADER LIVELLO 2: navigazione ===== -->
+    <nav class="header__nav">
+      <div class="contenitore">
+        <a href="#">Tutte</a>
+        <a href="#">Assistente acquisti</a>
+        <a href="#">Offerte</a>
+        <a href="#">Assistenza clienti</a>
+        <a href="#">Abbonamento</a>
+        <a href="#">Acquista di nuovo</a>
+        <a href="#">Idee regalo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contenitore">
+
+    <!-- ===== RIQUADRI TEMATICI: un solo blocco per sezione, home meno affollata ===== -->
+    <section class="riquadri" aria-label="In evidenza">
+      <a href="#" class="riquadro"><h2>I piu' amati</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Novita'</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Sotto i 10 EUR</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Scelti dalla redazione</h2><div class="img-segnaposto"></div></a>
+    </section>
+
+    <!-- ===== CONTINUA AD ACQUISTARE (personalizzazione su cronologia) ===== -->
+    <section class="sezione">
+      <h2>Continua ad acquistare</h2>
+      <div class="griglia">
+
+        <!-- Scheda 1: prodotto a marchio proprio -->
+        <article class="scheda">
+          <span class="etichetta etichetta--proprio">Marchio proprio</span>
+          <div class="img-segnaposto"></div>
+          <h3>Prodotto di esempio 1</h3>
+          <!-- Recensioni: solo acquirenti verificati (differenziatore) -->
+          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9734; <small>(12 acquirenti verificati)</small></p>
+          <p class="prezzo">19<sup>90</sup> <small>EUR</small></p>
+          <!-- Prezzo totale con spedizione visibile subito, nessun costo a sorpresa -->
+          <p class="totale">Totale con spedizione: 24,90 EUR</p>
+          <button class="btn">Aggiungi al carrello</button>
+        </article>
+
+        <!-- Scheda 2: venditore terzo, con sconto -->
+        <article class="scheda">
+          <span class="etichetta etichetta--terzi">Venditore terzo</span>
+          <span class="sconto">-15%</span>
+          <div class="img-segnaposto"></div>
+          <h3>Prodotto di esempio 2</h3>
+          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9733; <small>(5 acquirenti verificati)</small></p>
+          <p class="prezzo">34<sup>00</sup> <small>EUR</small> <s>40,00</s></p>
+          <p class="totale">Totale con spedizione: 34,00 EUR</p>
+          <button class="btn">Aggiungi al carrello</button>
+        </article>
+
+        <!-- Scheda 3: sponsorizzato, chiaramente distinto -->
+        <article class="scheda">
+          <span class="etichetta etichetta--sponsor">Sponsorizzato</span>
+          <div class="img-segnaposto"></div>
+          <h3>Prodotto di esempio 3</h3>
+          <p class="recensioni">&#9733;&#9733;&#9733;&#9734;&#9734; <small>(3 acquirenti verificati)</small></p>
+          <p class="prezzo">12<sup>50</sup> <small>EUR</small></p>
+          <p class="totale">Totale con spedizione: 17,50 EUR</p>
+          <button class="btn">Aggiungi al carrello</button>
+        </article>
+
+        <!-- Scheda 4: offerta con scadenza REALE (unica etichetta di urgenza ammessa) -->
+        <article class="scheda">
+          <span class="etichetta etichetta--terzi">Venditore terzo</span>
+          <span class="sconto">-20%</span>
+          <div class="img-segnaposto"></div>
+          <h3>Prodotto di esempio 4</h3>
+          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9734; <small>(8 acquirenti verificati)</small></p>
+          <p class="prezzo">48<sup>00</sup> <small>EUR</small> <s>60,00</s></p>
+          <p class="totale">Totale con spedizione: 48,00 EUR</p>
+          <!-- Mostrare solo se la scadenza e' vera e salvata nel database -->
+          <p class="scadenza">Offerta valida fino al [data reale]</p>
+          <button class="btn">Aggiungi al carrello</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== OFFERTE CONSIGLIATE: tre colonne Per te / Offerte / Bestseller ===== -->
+    <section class="sezione">
+      <h2>Scopri di piu'</h2>
+      <div class="tre-colonne">
+        <div class="colonna"><h3>Per te</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
+        <div class="colonna"><h3>Offerte</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
+        <div class="colonna"><h3>Bestseller</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER: resi e assistenza in linguaggio semplice ===== -->
+  <footer class="footer">
+    <div class="contenitore footer__colonne">
+      <div>
+        <h4>Aiuto</h4>
+        <a href="#">Come restituire un prodotto</a>
+        <a href="#">Contatta l'assistenza</a>
+        <a href="#">Spedizioni e costi</a>
+      </div>
+      <div>
+        <h4>Vendi con noi</h4>
+        <a href="#">Diventa venditore</a>
+        <a href="#">Tariffe</a>
+      </div>
+      <div>
+        <h4>Informazioni legali</h4>
+        <a href="#">Privacy</a>
+        <a href="#">Termini di vendita</a>
+        <a href="#">Diritto di recesso</a>
+      </div>
+    </div>
+    <p class="footer__copy">&copy; 2026 NomeSito. Tutti i diritti riservati.</p>
+  </footer>
 
 </body>
 </html>

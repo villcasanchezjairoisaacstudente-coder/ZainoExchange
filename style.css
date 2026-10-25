@@ -1,0 +1,106 @@
+/* ===== VARIABILI: palette propria, diversa da quella di Amazon ===== */
+:root {
+  --colore-primario: #0f4c5c;   /* blu petrolio per header */
+  --colore-primario-scuro: #0a3540;
+  --colore-accento: #e36414;    /* arancio bruciato per azioni principali */
+  --colore-sconto: #c1121f;     /* rosso solo per gli sconti */
+  --colore-sfondo: #f4f6f7;
+  --colore-testo: #1b2a2f;
+  --colore-bordo: #d9e0e3;
+  --raggio: 8px;
+}
+
+/* ===== RESET DI BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, Arial, sans-serif; background: var(--colore-sfondo); color: var(--colore-testo); line-height: 1.4; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Contenitore centrato con larghezza massima */
+.contenitore { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+
+/* ===== HEADER LIVELLO 1 ===== */
+.header { background: var(--colore-primario); color: #fff; }
+.header__top { display: flex; align-items: center; gap: 16px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+.logo { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
+.logo span { color: var(--colore-accento); }
+
+.consegna, .voce-header { display: flex; flex-direction: column; font-size: 0.9rem; }
+.consegna small, .voce-header small { opacity: 0.8; font-size: 0.75rem; }
+
+/* Barra di ricerca: occupa lo spazio rimanente */
+.ricerca { display: flex; flex: 1 1 320px; min-width: 240px; }
+.ricerca select { border: 0; padding: 0 8px; background: #e8eef0; border-radius: var(--raggio) 0 0 var(--raggio); }
+.ricerca input { flex: 1; border: 0; padding: 10px; font-size: 1rem; }
+.ricerca button { border: 0; padding: 0 18px; background: var(--colore-accento); color: #fff; font-weight: 700; cursor: pointer; border-radius: 0 var(--raggio) var(--raggio) 0; }
+.ricerca button:hover { filter: brightness(1.1); }
+
+/* Carrello con contatore */
+.carrello { display: flex; align-items: center; gap: 6px; }
+.carrello__contatore { background: var(--colore-accento); border-radius: 999px; min-width: 24px; height: 24px; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; }
+
+/* ===== HEADER LIVELLO 2 ===== */
+.header__nav { background: var(--colore-primario-scuro); font-size: 0.9rem; }
+.header__nav .contenitore { display: flex; gap: 20px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; white-space: nowrap; }
+
+/* ===== SEGNAPOSTO IMMAGINI (da sostituire con <img> reali) ===== */
+.img-segnaposto { background: linear-gradient(135deg, #cfdde2, #e9eff1); border-radius: var(--raggio); aspect-ratio: 4 / 3; width: 100%; }
+
+/* ===== SEZIONI ===== */
+.sezione { margin: 24px 0; }
+.sezione > h2 { margin-bottom: 12px; font-size: 1.3rem; }
+
+/* ===== RIQUADRI TEMATICI ===== */
+.riquadri { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+.riquadro { background: #fff; padding: 16px; border-radius: var(--raggio); border: 1px solid var(--colore-bordo); }
+.riquadro h2 { font-size: 1.1rem; margin-bottom: 10px; }
+
+/* ===== GRIGLIA PRODOTTI ===== */
+.griglia { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+
+/* ===== SCHEDA PRODOTTO ===== */
+.scheda { position: relative; background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.scheda h3 { font-size: 1rem; }
+.scheda .btn { margin-top: auto; }
+
+/* Bollino sconto in alto a destra */
+.sconto { position: absolute; top: 10px; right: 10px; background: var(--colore-sconto); color: #fff; font-weight: 700; padding: 4px 8px; border-radius: 999px; font-size: 0.85rem; z-index: 1; }
+
+/* Etichette di provenienza: distinguono marchio proprio, terzi e sponsorizzato */
+.etichetta { align-self: flex-start; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+.etichetta--proprio { background: #d8f0e2; color: #14532d; }
+.etichetta--terzi { background: #e6ecf5; color: #1e3a5f; }
+.etichetta--sponsor { background: #fff1cc; color: #7a4b00; border: 1px dashed #c98a00; }
+
+/* Recensioni e prezzo */
+.recensioni { color: #b7791f; font-size: 0.95rem; }
+.recensioni small { color: #5c6b70; }
+.prezzo { font-size: 1.5rem; font-weight: 700; }
+.prezzo sup { font-size: 0.6em; }      /* centesimi in apice */
+.prezzo small { font-size: 0.5em; font-weight: 500; }
+.prezzo s { font-size: 0.55em; color: #6b7a80; font-weight: 400; }
+.totale { font-size: 0.85rem; color: #2f4a52; }
+.scadenza { font-size: 0.82rem; color: var(--colore-sconto); font-weight: 600; }
+
+/* Pulsante principale */
+.btn { border: 0; background: var(--colore-accento); color: #fff; padding: 10px 12px; border-radius: var(--raggio); font-weight: 700; cursor: pointer; }
+.btn:hover { filter: brightness(1.08); }
+.btn:focus-visible, .ricerca button:focus-visible { outline: 3px solid #ffb703; outline-offset: 2px; }
+
+/* ===== TRE COLONNE ===== */
+.tre-colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.colonna { background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.colonna a { color: var(--colore-primario); font-weight: 600; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--colore-primario-scuro); color: #dfe8ea; margin-top: 40px; padding: 28px 0 12px; }
+.footer__colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.footer h4 { color: #fff; margin-bottom: 8px; }
+.footer a { display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.footer__copy { text-align: center; font-size: 0.8rem; margin-top: 20px; opacity: 0.7; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  .consegna, .voce-header { display: none; }  /* header piu' pulito su schermi piccoli */
+  .ricerca { order: 3; flex-basis: 100%; }
+}
