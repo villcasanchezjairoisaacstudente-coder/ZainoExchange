@@ -104,6 +104,46 @@ a:hover { text-decoration: underline; }
 .btn--secondario:hover { background: #eaf2f4; text-decoration: none; }
 .hero .btn:hover { text-decoration: none; }
 
+/* ===== CAROSELLI: fila scorrevole con pulsanti ai lati ===== */
+.carosello { position: relative; margin-top: 20px; }
+.carosello__pista { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.carosello__pista::-webkit-scrollbar { display: none; }  /* nasconde la barra di scorrimento */
+.carosello__pista > * { scroll-snap-align: start; flex-shrink: 0; }
+
+/* Pulsanti freccia sinistra e destra */
+.carosello__freccia { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 36px; height: 64px; border: 1px solid var(--colore-bordo); background: #fff; font-size: 1.8rem; line-height: 1; color: var(--colore-testo); cursor: pointer; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+.carosello__freccia--sx { left: 0; border-radius: 0 var(--raggio) var(--raggio) 0; }
+.carosello__freccia--dx { right: 0; border-radius: var(--raggio) 0 0 var(--raggio); }
+.carosello__freccia:hover { background: #eef1f6; }
+.carosello__freccia:focus-visible { outline: 3px solid #ffb703; outline-offset: 2px; }
+
+/* ===== RIQUADRI ALTI (carosello 1) ===== */
+.vetrina { flex-basis: 300px; min-height: 440px; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.vetrina h2 { font-size: 1.3rem; line-height: 1.2; }
+.vetrina--negozi { background: #dbe6ff; }
+.vetrina--offerte { background: var(--colore-primario); color: #fff; }
+.vetrina--nuovi { background: #d8f0e2; }
+.vetrina__poster { flex: 1; aspect-ratio: auto; min-height: 160px; }
+.vetrina__testo { font-size: 0.9rem; }
+.vetrina__link { color: var(--colore-primario); font-weight: 700; }
+
+/* Griglia 2x2 di mini schede dentro il riquadro */
+.mini-griglia { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.mini { position: relative; background: #fff; border-radius: var(--raggio); padding: 8px; display: flex; align-items: center; }
+.mini:hover { text-decoration: none; box-shadow: 0 0 0 2px var(--colore-accento); }
+.mini .img-segnaposto { aspect-ratio: 1; }
+
+/* Bollini sconto e novita' (in basso a sinistra della mini scheda) */
+.badge-sconto, .badge-nuovo { position: absolute; left: 8px; bottom: 8px; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; color: #fff; }
+.badge-sconto { background: var(--colore-sconto); }
+.badge-nuovo { background: #2f9e44; }
+
+/* ===== FASCIA PERSONALIZZATA (carosello 2) ===== */
+.fascia-card { position: relative; flex-basis: 180px; background: #fff; border: 1px solid var(--colore-bordo); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.fascia-card h3 { font-size: 0.95rem; }
+.fascia-card .img-segnaposto { aspect-ratio: 1; }
+.badge-sconto--riga { position: static; align-self: flex-start; }  /* sotto l'immagine, non sopra */
+
 /* ===== COME FUNZIONA ===== */
 .passi { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .passo { background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 16px; }
@@ -145,4 +185,5 @@ a:hover { text-decoration: underline; }
   .consegna, .voce-header { display: none; }  /* header piu' pulito su schermi piccoli */
   .ricerca { order: 3; flex-basis: 100%; }
   .hero, .impatto { grid-template-columns: 1fr; }  /* hero e impatto su una colonna */
+  .vetrina { flex-basis: 80%; }                     /* su mobile si vede anche l'inizio del riquadro successivo */
 }

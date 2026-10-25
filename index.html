@@ -79,6 +79,89 @@
       <div class="hero__immagine img-segnaposto" aria-hidden="true"></div>
     </section>
 
+    <!-- ===== CAROSELLO 1: tre riquadri alti con pulsanti per scorrere ===== -->
+    <section class="carosello" aria-label="In evidenza">
+      <button class="carosello__freccia carosello__freccia--sx" aria-label="Scorri a sinistra">&#8249;</button>
+      <div class="carosello__pista">
+
+        <!-- Riquadro 1: post pubblicitari dei negozi (sempre con etichetta Pubblicita') -->
+        <article class="vetrina vetrina--negozi">
+          <h2>Dai negozi della zona</h2>
+          <span class="etichetta etichetta--sponsor">Pubblicita'</span>
+          <div class="img-segnaposto vetrina__poster"></div>
+          <p class="vetrina__testo"><strong>Libreria di esempio</strong><br>[testo del post del negozio]</p>
+          <a href="#" class="vetrina__link">Vai al negozio</a>
+        </article>
+
+        <!-- Riquadro 2: offerte in generale -->
+        <article class="vetrina vetrina--offerte">
+          <h2>Offerte del momento</h2>
+          <div class="mini-griglia">
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-sconto">-30%</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-sconto">-20%</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-sconto">-50%</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-sconto">-15%</span></a>
+          </div>
+        </article>
+
+        <!-- Riquadro 3: ultimi libri aggiunti -->
+        <article class="vetrina vetrina--nuovi">
+          <h2>Ultimi aggiunti</h2>
+          <div class="mini-griglia">
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-nuovo">Nuovo</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-nuovo">Nuovo</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-nuovo">Nuovo</span></a>
+            <a href="#" class="mini"><div class="img-segnaposto"></div><span class="badge-nuovo">Nuovo</span></a>
+          </div>
+        </article>
+
+      </div>
+      <button class="carosello__freccia carosello__freccia--dx" aria-label="Scorri a destra">&#8250;</button>
+    </section>
+
+    <!-- ===== CAROSELLO 2: schede personalizzate in base a ricerche e cronologia dell'utente ===== -->
+    <section class="carosello carosello--fascia" aria-label="Per te">
+      <button class="carosello__freccia carosello__freccia--sx" aria-label="Scorri a sinistra">&#8249;</button>
+      <div class="carosello__pista">
+
+        <article class="fascia-card">
+          <h3>Dalle tue ricerche</h3>
+          <div class="img-segnaposto"></div>
+          <span class="badge-sconto badge-sconto--riga">10% di sconto</span>
+        </article>
+
+        <article class="fascia-card">
+          <h3>Dalle tue ricerche</h3>
+          <div class="img-segnaposto"></div>
+          <span class="badge-sconto badge-sconto--riga">25% di sconto</span>
+        </article>
+
+        <article class="fascia-card">
+          <h3>Continua ad acquistare</h3>
+          <div class="img-segnaposto"></div>
+        </article>
+
+        <article class="fascia-card">
+          <h3>Continua ad acquistare</h3>
+          <div class="img-segnaposto"></div>
+        </article>
+
+        <article class="fascia-card">
+          <h3>Offerte per te</h3>
+          <div class="img-segnaposto"></div>
+          <span class="badge-sconto badge-sconto--riga">15% di sconto</span>
+        </article>
+
+        <article class="fascia-card">
+          <h3>Offerte per te</h3>
+          <div class="img-segnaposto"></div>
+          <span class="badge-sconto badge-sconto--riga">40% di sconto</span>
+        </article>
+
+      </div>
+      <button class="carosello__freccia carosello__freccia--dx" aria-label="Scorri a destra">&#8250;</button>
+    </section>
+
     <!-- ===== COME FUNZIONA: scambio semplice e vantaggioso ===== -->
     <section class="sezione" id="come-funziona">
       <h2>Come funziona</h2>
@@ -101,13 +184,6 @@
       </ol>
     </section>
 
-    <!-- ===== RIQUADRI TEMATICI: un solo blocco per sezione ===== -->
-    <section class="riquadri" aria-label="In evidenza">
-      <a href="#" class="riquadro"><h2>Libri scolastici</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Narrativa</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Sotto i 5 EUR</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Appena arrivati</h2><div class="img-segnaposto"></div></a>
-    </section>
 
     <!-- ===== LIBRI DISPONIBILI ===== -->
     <section class="sezione">
@@ -170,15 +246,6 @@
       </div>
     </section>
 
-    <!-- ===== TRE COLONNE: percorsi di scoperta ===== -->
-    <section class="sezione">
-      <h2>Scopri di piu'</h2>
-      <div class="tre-colonne">
-        <div class="colonna"><h3>Per la tua classe</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
-        <div class="colonna"><h3>Letture del momento</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
-        <div class="colonna"><h3>I piu' scambiati</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
-      </div>
-    </section>
 
     <!-- ===== SOSTENIBILITA' E COMMUNITY (vision) ===== -->
     <section class="sezione impatto">
@@ -226,6 +293,24 @@
     </div>
     <p class="footer__copy">&copy; 2026 ZainoExchange. Progetto scolastico, Bergamo.</p>
   </footer>
+
+  <!-- Script per i pulsanti dei caroselli: fa scorrere la fila di schede -->
+  <script>
+    // Per ogni carosello della pagina
+    document.querySelectorAll('.carosello').forEach(function (carosello) {
+      var pista = carosello.querySelector('.carosello__pista');
+      var sx = carosello.querySelector('.carosello__freccia--sx');
+      var dx = carosello.querySelector('.carosello__freccia--dx');
+
+      // Scorre dell'80% della larghezza visibile, con animazione morbida
+      sx.addEventListener('click', function () {
+        pista.scrollBy({ left: -pista.clientWidth * 0.8, behavior: 'smooth' });
+      });
+      dx.addEventListener('click', function () {
+        pista.scrollBy({ left: pista.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+  </script>
 
 </body>
 </html>
