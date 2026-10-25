@@ -1,7 +1,7 @@
 /* ===== VARIABILI: palette propria, diversa da quella di Amazon ===== */
 :root {
-  --colore-primario: #0f4c5c;   /* blu petrolio per header */
-  --colore-primario-scuro: #0a3540;
+  --colore-primario: #1f3f94;   /* blu del logo ZainoExchange */
+  --colore-primario-scuro: #14296b;
   --colore-accento: #e36414;    /* arancio bruciato per azioni principali */
   --colore-sconto: #c1121f;     /* rosso solo per gli sconti */
   --colore-sfondo: #f4f6f7;
@@ -20,18 +20,19 @@ a:hover { text-decoration: underline; }
 .contenitore { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
 
 /* ===== HEADER LIVELLO 1 ===== */
-.header { background: var(--colore-primario); color: #fff; }
+/* Header bianco: il logo (blu e grigio scuro) resta ben visibile */
+.header { background: #fff; color: var(--colore-testo); border-bottom: 1px solid var(--colore-bordo); }
 .header__top { display: flex; align-items: center; gap: 16px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
-.logo { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
-.logo span { color: var(--colore-accento); }
+.logo { display: flex; align-items: center; }
+.logo img { height: 52px; width: auto; display: block; }  /* mantiene le proporzioni del logo */
 
 .consegna, .voce-header { display: flex; flex-direction: column; font-size: 0.9rem; }
 .consegna small, .voce-header small { opacity: 0.8; font-size: 0.75rem; }
 
 /* Barra di ricerca: occupa lo spazio rimanente */
 .ricerca { display: flex; flex: 1 1 320px; min-width: 240px; }
-.ricerca select { border: 0; padding: 0 8px; background: #e8eef0; border-radius: var(--raggio) 0 0 var(--raggio); }
-.ricerca input { flex: 1; border: 0; padding: 10px; font-size: 1rem; }
+.ricerca select { border: 1px solid var(--colore-bordo); border-right: 0; padding: 0 8px; background: #eef1f6; border-radius: var(--raggio) 0 0 var(--raggio); }
+.ricerca input { flex: 1; border: 1px solid var(--colore-bordo); padding: 10px; font-size: 1rem; }  /* bordo visibile su header bianco */
 .ricerca button { border: 0; padding: 0 18px; background: var(--colore-accento); color: #fff; font-weight: 700; cursor: pointer; border-radius: 0 var(--raggio) var(--raggio) 0; }
 .ricerca button:hover { filter: brightness(1.1); }
 
@@ -40,7 +41,7 @@ a:hover { text-decoration: underline; }
 .carrello__contatore { background: var(--colore-accento); border-radius: 999px; min-width: 24px; height: 24px; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; }
 
 /* ===== HEADER LIVELLO 2 ===== */
-.header__nav { background: var(--colore-primario-scuro); font-size: 0.9rem; }
+.header__nav { background: var(--colore-primario); color: #fff; font-size: 0.9rem; }  /* barra blu sotto l'header bianco */
 .header__nav .contenitore { display: flex; gap: 20px; overflow-x: auto; padding-top: 8px; padding-bottom: 8px; white-space: nowrap; }
 
 /* ===== SEGNAPOSTO IMMAGINI (da sostituire con <img> reali) ===== */
@@ -92,6 +93,46 @@ a:hover { text-decoration: underline; }
 .colonna { background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
 .colonna a { color: var(--colore-primario); font-weight: 600; }
 
+/* ===== HERO (mission) ===== */
+.hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 28px; margin-top: 20px; }
+.hero__sopra { color: var(--colore-primario); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 8px 0 12px; line-height: 1.15; }
+.hero__azioni { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.hero__immagine { aspect-ratio: 16 / 10; }
+.btn--grande { padding: 12px 20px; display: inline-block; font-size: 1rem; }
+.btn--secondario { background: #fff; color: var(--colore-primario); border: 2px solid var(--colore-primario); }
+.btn--secondario:hover { background: #eaf2f4; text-decoration: none; }
+.hero .btn:hover { text-decoration: none; }
+
+/* ===== COME FUNZIONA ===== */
+.passi { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.passo { background: #fff; border: 1px solid var(--colore-bordo); border-radius: var(--raggio); padding: 16px; }
+.passo__numero { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--colore-primario); color: #fff; font-weight: 700; margin-bottom: 8px; }
+.passo h3 { margin-bottom: 4px; }
+
+/* ===== ETICHETTE E MODALITA' LIBRI ===== */
+.etichetta--studente { background: #d8f0e2; color: #14532d; }
+.etichetta--negozio { background: #e6ecf5; color: #1e3a5f; }
+.modalita { position: absolute; top: 10px; right: 10px; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; z-index: 1; }
+.modalita--scambio { background: var(--colore-primario); color: #fff; }
+.modalita--acquisto { background: #fff; color: var(--colore-primario); border: 1px solid var(--colore-primario); }
+.scheda .sconto { top: 38px; }  /* sotto il bollino della modalita' */
+.autore { color: #5c6b70; font-size: 0.9rem; }
+
+/* Condizioni del libro con pallino colorato (non solo colore: c'e' sempre il testo) */
+.condizioni { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; }
+.pallino { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.pallino--ottimo { background: #2f9e44; }
+.pallino--buono { background: #e0a800; }
+.pallino--discreto { background: #d9822b; }
+
+/* ===== IMPATTO (vision) ===== */
+.impatto { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: center; background: var(--colore-primario); color: #fff; border-radius: var(--raggio); padding: 28px; }
+.impatto h2 { margin-bottom: 8px; }
+.impatto__numeri { list-style: none; display: grid; gap: 10px; }
+.impatto__numeri li { background: rgba(255, 255, 255, 0.1); border-radius: var(--raggio); padding: 10px 14px; font-size: 0.9rem; }
+.impatto__numeri strong { display: block; font-size: 1.4rem; }
+
 /* ===== FOOTER ===== */
 .footer { background: var(--colore-primario-scuro); color: #dfe8ea; margin-top: 40px; padding: 28px 0 12px; }
 .footer__colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
@@ -103,4 +144,5 @@ a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .consegna, .voce-header { display: none; }  /* header piu' pulito su schermi piccoli */
   .ricerca { order: 3; flex-basis: 100%; }
+  .hero, .impatto { grid-template-columns: 1fr; }  /* hero e impatto su una colonna */
 }

@@ -4,159 +4,227 @@
   <meta charset="UTF-8">
   <!-- Rende il sito adattabile a mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NomeSito - Home</title>
+  <title>ZainoExchange - Dai una seconda vita ai tuoi libri</title>
+  <meta name="description" content="Scambia e trova libri usati in buone condizioni a Bergamo. Cultura accessibile, economia circolare.">
   <!-- Collegamento al foglio di stile -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== HEADER LIVELLO 1: logo, consegna, ricerca, account, ordini, carrello ===== -->
+  <!-- ===== HEADER LIVELLO 1: logo, zona, ricerca, account, scambi, zaino ===== -->
   <header class="header">
     <div class="header__top contenitore">
-      <!-- Logo segnaposto: sostituire con il logo del sito (identita' propria) -->
-      <a href="#" class="logo">Nome<span>Sito</span></a>
-
-      <!-- Scelta del luogo di consegna -->
-      <a href="#" class="consegna">
-        <small>Consegna a</small>
-        <strong>Inserisci CAP</strong>
+      <!-- Logo: salva l'immagine come logo.png nella stessa cartella di questo file -->
+      <a href="#" class="logo">
+        <img src="logo.png" alt="ZainoExchange.it" height="52">
       </a>
 
-      <!-- Barra di ricerca con menu categorie -->
+      <!-- Zona di scambio (scuola / citta') -->
+      <a href="#" class="consegna">
+        <small>Scambio a</small>
+        <strong>Bergamo</strong>
+      </a>
+
+      <!-- Barra di ricerca con menu categorie di libri -->
       <form class="ricerca" action="#" role="search">
         <select aria-label="Categoria">
-          <option>Tutte</option>
-          <option>Categoria 1</option>
-          <option>Categoria 2</option>
+          <option>Tutti i libri</option>
+          <option>Libri scolastici</option>
+          <option>Narrativa</option>
+          <option>Saggistica</option>
+          <option>Fumetti e manga</option>
         </select>
-        <input type="search" placeholder="Cerca prodotti" aria-label="Cerca">
+        <input type="search" placeholder="Cerca per titolo, autore o ISBN" aria-label="Cerca">
         <button type="submit">Cerca</button>
       </form>
 
-      <!-- Account, ordini e carrello con contatore -->
-      <a href="#" class="voce-header"><small>Ciao, accedi</small><strong>Account e liste</strong></a>
-      <a href="#" class="voce-header"><small>Resi e</small><strong>Ordini</strong></a>
-      <a href="#" class="carrello" aria-label="Carrello">
+      <!-- Account, i miei scambi e zaino (carrello) con contatore -->
+      <a href="#" class="voce-header"><small>Ciao, accedi</small><strong>Il mio profilo</strong></a>
+      <a href="#" class="voce-header"><small>Storico</small><strong>I miei scambi</strong></a>
+      <a href="#" class="carrello" aria-label="Il mio zaino">
         <span class="carrello__contatore">0</span>
-        <strong>Carrello</strong>
+        <strong>Zaino</strong>
       </a>
     </div>
 
     <!-- ===== HEADER LIVELLO 2: navigazione ===== -->
     <nav class="header__nav">
       <div class="contenitore">
-        <a href="#">Tutte</a>
-        <a href="#">Assistente acquisti</a>
-        <a href="#">Offerte</a>
-        <a href="#">Assistenza clienti</a>
-        <a href="#">Abbonamento</a>
-        <a href="#">Acquista di nuovo</a>
-        <a href="#">Idee regalo</a>
+        <a href="#">Tutte le categorie</a>
+        <a href="#">Libri scolastici</a>
+        <a href="#">Narrativa</a>
+        <a href="#">Scambia un libro</a>
+        <a href="#">Come funziona</a>
+        <a href="#">Community</a>
+        <a href="#">La nostra scuola</a>
+        <a href="#">Aiuto</a>
       </div>
     </nav>
   </header>
 
   <main class="contenitore">
 
-    <!-- ===== RIQUADRI TEMATICI: un solo blocco per sezione, home meno affollata ===== -->
-    <section class="riquadri" aria-label="In evidenza">
-      <a href="#" class="riquadro"><h2>I piu' amati</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Novita'</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Sotto i 10 EUR</h2><div class="img-segnaposto"></div></a>
-      <a href="#" class="riquadro"><h2>Scelti dalla redazione</h2><div class="img-segnaposto"></div></a>
+    <!-- ===== HERO: mission in evidenza con due azioni chiare ===== -->
+    <section class="hero">
+      <div class="hero__testo">
+        <p class="hero__sopra">La community dei libri usati a Bergamo</p>
+        <h1>Ogni libro merita un nuovo lettore.</h1>
+        <!-- Mission riassunta -->
+        <p>Facilitiamo l'accesso alla cultura e allo studio dando una seconda vita ai libri in buone condizioni: meno spreco di libri, piu' risparmio per te.</p>
+        <div class="hero__azioni">
+          <a href="#" class="btn btn--grande">Cerca un libro</a>
+          <a href="#" class="btn btn--secondario btn--grande">Scambia i tuoi libri</a>
+        </div>
+      </div>
+      <div class="hero__immagine img-segnaposto" aria-hidden="true"></div>
     </section>
 
-    <!-- ===== CONTINUA AD ACQUISTARE (personalizzazione su cronologia) ===== -->
+    <!-- ===== COME FUNZIONA: scambio semplice e vantaggioso ===== -->
+    <section class="sezione" id="come-funziona">
+      <h2>Come funziona</h2>
+      <ol class="passi">
+        <li class="passo">
+          <span class="passo__numero">1</span>
+          <h3>Pubblica il tuo libro</h3>
+          <p>Aggiungi titolo, ISBN e condizioni. Le foto aiutano chi cerca.</p>
+        </li>
+        <li class="passo">
+          <span class="passo__numero">2</span>
+          <h3>Trova chi lo cerca</h3>
+          <p>Ti mettiamo in contatto con studenti e lettori della tua zona.</p>
+        </li>
+        <li class="passo">
+          <span class="passo__numero">3</span>
+          <h3>Scambia o acquisisci</h3>
+          <p>Ritiro di persona a scuola o in citta': nessuna spedizione, nessun costo nascosto.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== RIQUADRI TEMATICI: un solo blocco per sezione ===== -->
+    <section class="riquadri" aria-label="In evidenza">
+      <a href="#" class="riquadro"><h2>Libri scolastici</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Narrativa</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Sotto i 5 EUR</h2><div class="img-segnaposto"></div></a>
+      <a href="#" class="riquadro"><h2>Appena arrivati</h2><div class="img-segnaposto"></div></a>
+    </section>
+
+    <!-- ===== LIBRI DISPONIBILI ===== -->
     <section class="sezione">
-      <h2>Continua ad acquistare</h2>
+      <h2>Libri disponibili vicino a te</h2>
       <div class="griglia">
 
-        <!-- Scheda 1: prodotto a marchio proprio -->
+        <!-- Scheda 1: libro di uno studente, in scambio -->
         <article class="scheda">
-          <span class="etichetta etichetta--proprio">Marchio proprio</span>
+          <span class="etichetta etichetta--studente">Studente</span>
+          <span class="modalita modalita--scambio">Scambio</span>
           <div class="img-segnaposto"></div>
-          <h3>Prodotto di esempio 1</h3>
-          <!-- Recensioni: solo acquirenti verificati (differenziatore) -->
-          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9734; <small>(12 acquirenti verificati)</small></p>
-          <p class="prezzo">19<sup>90</sup> <small>EUR</small></p>
-          <!-- Prezzo totale con spedizione visibile subito, nessun costo a sorpresa -->
-          <p class="totale">Totale con spedizione: 24,90 EUR</p>
-          <button class="btn">Aggiungi al carrello</button>
+          <h3>Titolo del libro 1</h3>
+          <p class="autore">Autore di esempio</p>
+          <!-- Condizioni del libro: parte centrale della fiducia nello scambio -->
+          <p class="condizioni"><span class="pallino pallino--ottimo"></span>Come nuovo</p>
+          <p class="prezzo">Scambio <small>alla pari</small></p>
+          <p class="totale">Ritiro a scuola: nessun costo di spedizione</p>
+          <button class="btn">Richiedi scambio</button>
         </article>
 
-        <!-- Scheda 2: venditore terzo, con sconto -->
+        <!-- Scheda 2: libro di uno studente, in vendita a prezzo ridotto -->
         <article class="scheda">
-          <span class="etichetta etichetta--terzi">Venditore terzo</span>
-          <span class="sconto">-15%</span>
+          <span class="etichetta etichetta--studente">Studente</span>
+          <span class="modalita modalita--acquisto">Acquisto</span>
+          <span class="sconto">-60%</span>
           <div class="img-segnaposto"></div>
-          <h3>Prodotto di esempio 2</h3>
-          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9733; <small>(5 acquirenti verificati)</small></p>
-          <p class="prezzo">34<sup>00</sup> <small>EUR</small> <s>40,00</s></p>
-          <p class="totale">Totale con spedizione: 34,00 EUR</p>
-          <button class="btn">Aggiungi al carrello</button>
+          <h3>Titolo del libro 2</h3>
+          <p class="autore">Autore di esempio</p>
+          <p class="condizioni"><span class="pallino pallino--buono"></span>Buono</p>
+          <p class="prezzo">8<sup>00</sup> <small>EUR</small> <s>20,00</s></p>
+          <p class="totale">Totale: 8,00 EUR, ritiro di persona</p>
+          <button class="btn">Acquisisci</button>
         </article>
 
-        <!-- Scheda 3: sponsorizzato, chiaramente distinto -->
+        <!-- Scheda 3: libro di un negozio della zona -->
         <article class="scheda">
-          <span class="etichetta etichetta--sponsor">Sponsorizzato</span>
+          <span class="etichetta etichetta--negozio">Negozio della zona</span>
+          <span class="modalita modalita--acquisto">Acquisto</span>
           <div class="img-segnaposto"></div>
-          <h3>Prodotto di esempio 3</h3>
-          <p class="recensioni">&#9733;&#9733;&#9733;&#9734;&#9734; <small>(3 acquirenti verificati)</small></p>
+          <h3>Titolo del libro 3</h3>
+          <p class="autore">Autore di esempio</p>
+          <p class="condizioni"><span class="pallino pallino--buono"></span>Buono</p>
           <p class="prezzo">12<sup>50</sup> <small>EUR</small></p>
-          <p class="totale">Totale con spedizione: 17,50 EUR</p>
-          <button class="btn">Aggiungi al carrello</button>
+          <p class="totale">Totale: 12,50 EUR, ritiro in negozio</p>
+          <button class="btn">Acquisisci</button>
         </article>
 
-        <!-- Scheda 4: offerta con scadenza REALE (unica etichetta di urgenza ammessa) -->
+        <!-- Scheda 4: libro in scambio con richiesta specifica -->
         <article class="scheda">
-          <span class="etichetta etichetta--terzi">Venditore terzo</span>
-          <span class="sconto">-20%</span>
+          <span class="etichetta etichetta--studente">Studente</span>
+          <span class="modalita modalita--scambio">Scambio</span>
           <div class="img-segnaposto"></div>
-          <h3>Prodotto di esempio 4</h3>
-          <p class="recensioni">&#9733;&#9733;&#9733;&#9733;&#9734; <small>(8 acquirenti verificati)</small></p>
-          <p class="prezzo">48<sup>00</sup> <small>EUR</small> <s>60,00</s></p>
-          <p class="totale">Totale con spedizione: 48,00 EUR</p>
-          <!-- Mostrare solo se la scadenza e' vera e salvata nel database -->
-          <p class="scadenza">Offerta valida fino al [data reale]</p>
-          <button class="btn">Aggiungi al carrello</button>
+          <h3>Titolo del libro 4</h3>
+          <p class="autore">Autore di esempio</p>
+          <p class="condizioni"><span class="pallino pallino--discreto"></span>Discreto</p>
+          <p class="prezzo">Scambio <small>o 4,00 EUR</small></p>
+          <p class="totale">Cerca in cambio: [titolo richiesto]</p>
+          <button class="btn">Richiedi scambio</button>
         </article>
       </div>
     </section>
 
-    <!-- ===== OFFERTE CONSIGLIATE: tre colonne Per te / Offerte / Bestseller ===== -->
+    <!-- ===== TRE COLONNE: percorsi di scoperta ===== -->
     <section class="sezione">
       <h2>Scopri di piu'</h2>
       <div class="tre-colonne">
-        <div class="colonna"><h3>Per te</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
-        <div class="colonna"><h3>Offerte</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
-        <div class="colonna"><h3>Bestseller</h3><div class="img-segnaposto"></div><a href="#">Vedi tutto</a></div>
+        <div class="colonna"><h3>Per la tua classe</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
+        <div class="colonna"><h3>Letture del momento</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
+        <div class="colonna"><h3>I piu' scambiati</h3><div class="img-segnaposto"></div><a href="#">Vedi i libri</a></div>
       </div>
+    </section>
+
+    <!-- ===== SOSTENIBILITA' E COMMUNITY (vision) ===== -->
+    <section class="sezione impatto">
+      <div class="impatto__testo">
+        <h2>Una rete in cui ogni libro trova un nuovo lettore</h2>
+        <!-- Vision -->
+        <p>Vogliamo diventare la community di riferimento per il riutilizzo dei libri sul territorio, favorendo un consumo piu' consapevole, economico e rispettoso dell'ambiente nella nostra scuola e, perche' no, nella nostra citta' di Bergamo.</p>
+      </div>
+      <!-- Numeri d'impatto: mostrare SOLO dati reali dal database, mai inventati -->
+      <ul class="impatto__numeri">
+        <li><strong>[n]</strong> libri che hanno trovato un nuovo lettore</li>
+        <li><strong>[n]</strong> scambi completati</li>
+        <li><strong>[n]</strong> scuole e negozi nella rete</li>
+      </ul>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER: resi e assistenza in linguaggio semplice ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="contenitore footer__colonne">
       <div>
-        <h4>Aiuto</h4>
-        <a href="#">Come restituire un prodotto</a>
-        <a href="#">Contatta l'assistenza</a>
-        <a href="#">Spedizioni e costi</a>
+        <h4>ZainoExchange</h4>
+        <a href="#">Chi siamo</a>
+        <a href="#">Mission e vision</a>
+        <a href="#">Come funziona</a>
       </div>
       <div>
-        <h4>Vendi con noi</h4>
-        <a href="#">Diventa venditore</a>
-        <a href="#">Tariffe</a>
+        <h4>Community</h4>
+        <a href="#">Per studenti</a>
+        <a href="#">Per negozi e aziende della zona</a>
+        <a href="#">Per le scuole</a>
+      </div>
+      <div>
+        <h4>Aiuto</h4>
+        <a href="#">Come valutare le condizioni di un libro</a>
+        <a href="#">Contatta l'assistenza</a>
+        <a href="#">Segnala un problema</a>
       </div>
       <div>
         <h4>Informazioni legali</h4>
         <a href="#">Privacy</a>
-        <a href="#">Termini di vendita</a>
-        <a href="#">Diritto di recesso</a>
+        <a href="#">Termini di utilizzo</a>
       </div>
     </div>
-    <p class="footer__copy">&copy; 2026 NomeSito. Tutti i diritti riservati.</p>
+    <p class="footer__copy">&copy; 2026 ZainoExchange. Progetto scolastico, Bergamo.</p>
   </footer>
 
 </body>
