@@ -104,6 +104,17 @@ a:hover { text-decoration: underline; }
 .btn--secondario:hover { background: #eaf2f4; text-decoration: none; }
 .hero .btn:hover { text-decoration: none; }
 
+/* ===== BLOCCO PRINCIPALE: riquadro 1 a sinistra, caroselli a destra ===== */
+.home-griglia { display: grid; grid-template-columns: 340px 1fr; gap: 16px; margin-top: 20px; align-items: stretch; }
+.home-destra { display: flex; flex-direction: column; gap: 16px; min-width: 0; }  /* min-width: 0 permette ai caroselli di scorrere */
+.home-destra .carosello { margin-top: 0; }
+
+/* Riquadro 1: grande, alto quanto i due caroselli insieme */
+.vetrina-grande { background: #cfe9d6; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.vetrina-grande h2 { font-size: 1.6rem; line-height: 1.15; }
+.collage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.collage .img-segnaposto { aspect-ratio: 3 / 4; }
+
 /* ===== CAROSELLI: fila scorrevole con pulsanti ai lati ===== */
 .carosello { position: relative; margin-top: 20px; }
 .carosello__pista { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
@@ -118,7 +129,7 @@ a:hover { text-decoration: underline; }
 .carosello__freccia:focus-visible { outline: 3px solid #ffb703; outline-offset: 2px; }
 
 /* ===== RIQUADRI ALTI (carosello 1) ===== */
-.vetrina { flex-basis: 300px; min-height: 440px; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.vetrina { flex-grow: 1; flex-basis: 260px; min-height: 440px; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .vetrina h2 { font-size: 1.3rem; line-height: 1.2; }
 .vetrina--negozi { background: #dbe6ff; }
 .vetrina--offerte { background: var(--colore-primario); color: #fff; }
@@ -179,6 +190,11 @@ a:hover { text-decoration: underline; }
 .footer h4 { color: #fff; margin-bottom: 8px; }
 .footer a { display: block; font-size: 0.9rem; margin-bottom: 4px; }
 .footer__copy { text-align: center; font-size: 0.8rem; margin-top: 20px; opacity: 0.7; }
+
+/* ===== TABLET: il riquadro 1 passa sopra i caroselli ===== */
+@media (max-width: 900px) {
+  .home-griglia { grid-template-columns: 1fr; }
+}
 
 /* ===== MOBILE ===== */
 @media (max-width: 640px) {
